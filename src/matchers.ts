@@ -26,6 +26,6 @@ export const FourArithmeticOperatorsTokenMatcher = new TokenMatcher(
 );
 
 export const UnknownTokenMatcher = new TokenMatcher(
-    /^[-+*/](?:\s+|$)/,
+    /^\S+(?:\s+|$)/,
     (matched, location) => new TokenUnknown(matched[0], location)
 );

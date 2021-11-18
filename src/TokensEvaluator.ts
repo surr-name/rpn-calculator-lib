@@ -1,4 +1,5 @@
 import {
+    AbstractToken,
     OperationsMap,
  } from './types';
 
@@ -18,7 +19,6 @@ import {
 } from './operations';
 
 type StackOfNumbers = Array<number>;
-type KnownToken = TokenOperand | TokenOperator;
 
 export default class TokensEvaluator {
     private stack: StackOfNumbers;
@@ -29,7 +29,7 @@ export default class TokensEvaluator {
         this.operations = injectedOperations;
     }
 
-    eval(tokens: KnownToken[]): void {
+    eval(tokens: AbstractToken[]): void {
         this.stack = tokens.reduce(this.applyToken.bind(this), this.getStackCopy());
     }
 
@@ -45,13 +45,13 @@ export default class TokensEvaluator {
         return this.stack[this.getStackLength() - 1];
     }
 
-    private applyToken(stack: StackOfNumbers, token: KnownToken): StackOfNumbers {
+    private applyToken(stack: StackOfNumbers, token: AbstractToken): StackOfNumbers {
         switch (token.type) {
             case 'OPERAND':
-                this.applyTokenOperand(stack, token);
+                this.applyTokenOperand(stack, token as TokenOperand);
                 break;
             case 'OPERATOR':
-                this.applyTokenOperator(stack, token);
+                this.applyTokenOperator(stack, token as TokenOperator);
                 break;
             default:
                 throw new InvalidTokenError('Unknown token.', token);

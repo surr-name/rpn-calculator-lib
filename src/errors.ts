@@ -31,3 +31,20 @@ export class RpnSytaxError extends SyntaxError {
         super(message);
     }
 }
+
+export class MatcherRegExpError extends Error {
+    readonly input: string;
+    readonly regexp: string;
+
+    constructor(input: string, regexp: RegExp) {
+        super('Matcher.regexp matched not from first character.');
+        this.input = input;
+        this.regexp = regexp.toString();
+    }
+}
+
+export class NoTokensFoundError extends Error {
+    constructor() {
+        super('No tokens were found.');
+    }
+}
