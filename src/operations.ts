@@ -1,8 +1,8 @@
 import {
-    Operation,
+    OperationsMap,
  } from './types';
 
-export const operations: Map<string, Operation> = new Map();
+export const operations: OperationsMap = new Map();
 
 operations.set(
     '+',

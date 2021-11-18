@@ -1,6 +1,7 @@
 import {
     TokenOperand,
-    TokenOperator
+    TokenOperator,
+    OperationsMap,
  } from './types';
 
 import {
@@ -18,9 +19,11 @@ type KnownToken = TokenOperand | TokenOperator;
 
 export default class TokensEvaluator {
     private stack: StackOfNumbers;
+    private readonly operations: OperationsMap;
 
-    constructor(stack=[]) {
-        this.stack = stack;
+    constructor(injectedStack=[], injectedOperations=operations) {
+        this.stack = injectedStack;
+        this.operations = injectedOperations;
     }
 
     eval(tokens: KnownToken[]): void {
@@ -63,7 +66,7 @@ export default class TokensEvaluator {
     }
 
     private applyTokenOperator(stack: StackOfNumbers, token: TokenOperator): void {
-        const operation = operations.get(token.value);
+        const operation = this.operations.get(token.value);
         if (!operation) throw new InvalidTokenValueError(
             `Unknown operator "${token.value}".`,
             token
