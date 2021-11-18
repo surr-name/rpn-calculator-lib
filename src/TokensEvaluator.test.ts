@@ -7,10 +7,14 @@ import {
 } from './errors';
 
 import {
-    TokenOperator,
-    TokenOperand,
     Operation,
  } from './types';
+
+import {
+    TokenOperand,
+    TokenOperator,
+ } from './tokens';
+
 import { operations } from './operations';
 
 

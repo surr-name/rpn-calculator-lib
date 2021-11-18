@@ -1,8 +1,11 @@
 import {
-    TokenOperand,
-    TokenOperator,
     OperationsMap,
  } from './types';
+
+import {
+    TokenOperand,
+    TokenOperator,
+ } from './tokens';
 
 import {
     InvalidTokenError,

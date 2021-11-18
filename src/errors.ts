@@ -1,5 +1,6 @@
 import {
     TokenOperator,
+    Location,
 } from './types';
 
 export class InvalidTokenValueError extends TypeError {
@@ -19,7 +20,14 @@ export class InvalidTokenError extends TypeError {
 export class TooShortStackError extends Error {
     constructor(readonly rpnStack: [], readonly token: TokenOperator) {
         super(`Cannot apply oprator "${token.value}" to stack. Stack is too short.`);
-        this.rpnStack = rpnStack;
-        this.token = token;
+    }
+}
+
+export class RpnSytaxError extends SyntaxError {
+    constructor(
+        readonly message: string,
+        readonly location: Location
+    ) {
+        super(message);
     }
 }
