@@ -4,7 +4,7 @@ import {
 } from './types';
 
 import {
-    RpnSytaxError,
+    RpnSyntaxError,
 } from './errors';
 
 export class TokenOperand implements AbstractToken {
@@ -21,7 +21,7 @@ export class TokenOperand implements AbstractToken {
 
     private parseValue(matchedText: string): number {
         const value = parseFloat(matchedText);
-        if (Number.isNaN(value)) throw new RpnSytaxError(
+        if (Number.isNaN(value)) throw new RpnSyntaxError(
             `Can't convert "${matchedText}" to number.`,
             this.location
         );

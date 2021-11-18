@@ -23,7 +23,7 @@ export class TooShortStackError extends Error {
     }
 }
 
-export class RpnSytaxError extends SyntaxError {
+export class RpnSyntaxError extends SyntaxError {
     constructor(
         readonly message: string,
         readonly location: Location
