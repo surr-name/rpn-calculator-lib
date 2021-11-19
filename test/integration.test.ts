@@ -15,7 +15,8 @@ const createSimpleRpnCalculator = () => {
     ]);
 
     return (input: string): number | undefined => {
-        tokensEvaluator.eval(lexer.splitChunkToTokens(input));
+        const tokens = lexer.splitChunkToTokens(input);
+        tokensEvaluator.eval(tokens);
         return tokensEvaluator.getLastStackElement();
     };
 };
