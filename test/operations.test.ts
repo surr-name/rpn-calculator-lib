@@ -1,4 +1,4 @@
-import { operations } from './operations';
+import { operations } from '../src/operations';
 
 describe('operations', () => {
     test('+', () => {

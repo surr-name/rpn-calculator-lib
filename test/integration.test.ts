@@ -1,10 +1,10 @@
-import Lexer from './Lexer';
-import TokensEvaluator from './TokensEvaluator';
+import Lexer from '../src/Lexer';
+import TokensEvaluator from '../src/TokensEvaluator';
 import {
     FourArithmeticOperatorsTokenMatcher,
     OperandsTokenMatcher,
     UnknownTokenMatcher,
-} from './matchers';
+} from '../src/matchers';
 
 const createSimpleRpnCalculator = () => {
     const tokensEvaluator = new TokensEvaluator;

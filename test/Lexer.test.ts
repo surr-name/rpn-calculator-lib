@@ -1,9 +1,9 @@
-import Lexer from './Lexer';
+import Lexer from '../src/Lexer';
 import {
     FourArithmeticOperatorsTokenMatcher,
     OperandsTokenMatcher,
     UnknownTokenMatcher,
-} from './matchers';
+} from '../src/matchers';
 
 describe('Fixed Lexer Instance', () => {
     const fixedLexerInstance = new Lexer([

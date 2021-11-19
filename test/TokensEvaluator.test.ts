@@ -1,21 +1,21 @@
-import TokensEvaluator from './TokensEvaluator';
+import TokensEvaluator from '../src/TokensEvaluator';
 
 import {
     InvalidTokenError,
     InvalidTokenValueError,
     TooShortStackError,
-} from './errors';
+} from '../src/errors';
 
 import {
     Operation,
- } from './types';
+ } from '../src/types';
 
 import {
     TokenOperand,
     TokenOperator,
- } from './tokens';
+ } from '../src/tokens';
 
-import { operations } from './operations';
+import { operations } from '../src/operations';
 
 
 describe('RpnTokensEvaluator', () => {

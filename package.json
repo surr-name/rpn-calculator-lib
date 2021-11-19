@@ -1,10 +1,10 @@
 {
   "name": "rpn-calculator-lib",
   "version": "0.0.1",
-  "description": "test task",
+  "description": "Library of modules for creating customizable rpn calculator. Done as part of test task.",
   "main": "dist/index.js",
   "engines": {
-    "node": "^16.0.0"
+    "node": ">=16.0.0"
   },
   "scripts": {
     "build": "tsc",
@@ -15,9 +15,6 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "tokenizr": "^1.6.4"
-  },
   "devDependencies": {
     "@tsconfig/node16": "^1.0.2",
     "@types/jest": "^27.0.2",
@@ -29,32 +26,5 @@
     "jest": "^27.3.1",
     "ts-jest": "^27.0.7",
     "typescript": "^4.4.4"
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "ts"
-    ],
-    "rootDir": "dist",
-    "testRegex": ".*\\.test\\.js$",
-    "testEnvironment": "node",
-    "transform": {
-      "^.+\\.ts$": "ts-jest"
-    },
-    "coverageThreshold": {
-      "global": {
-        "branches": 80,
-        "functions": 80,
-        "lines": 80,
-        "statements": 80
-      }
-    },
-    "coverageReporters": [
-      "json",
-      "lcov",
-      "text",
-      "clover"
-    ]
   }
 }
